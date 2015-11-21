@@ -2,12 +2,12 @@
 
 var app = angular.module('quotes');
 
-app.controller('quotesCtrl', function($scope, dataService){
+app.controller('quotesCtrl', function($scope, quotesService){
 
-  dataService.getQuotes(function(response){
-    console.log(response.data);
-    $scope.quotes = response.data;
-  })
+  var quotes = quotesService.getQuotes();
+  quotes.then(function(data){
+    $scope.quotes = data;
+  });
 
 });
 
