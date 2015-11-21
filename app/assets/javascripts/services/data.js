@@ -2,11 +2,15 @@
 
 var app = angular.module('quotes');
 
-app.service('dataService', function($http){
+app.service('quotesService', function($http, $q){
 
-  this.getQuotes = function(callback) {
-    $http.get('api/quotes').then(callback);
-  };
+  this.getQuotes = function() {
+    var deferred = $q.defer();
+    $http.get('api/quotes').success(function(data){
+      deferred.resolve(data);
+    });
+    return deferred.promise;
+  }
 
 });
 

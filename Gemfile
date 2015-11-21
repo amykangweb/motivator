@@ -13,6 +13,8 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug'
+  gem 'jasmine'
+  gem 'guard-jasmine'
 end
 
 group :development do
