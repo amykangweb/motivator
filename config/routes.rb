@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
-    resource :quotes
+    resources :quotes
   end
 
   root 'quotes#index'
