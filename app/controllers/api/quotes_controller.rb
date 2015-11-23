@@ -1,8 +1,10 @@
 class Api::QuotesController < ApplicationController
 
   def index
-    quotes = Quote.all
-    render json: quotes
+    motivational = Quote.where(category: "Motivational")
+    funny = Quote.where(category: "Funny")
+    sad = Quote.where(category: "Sad")
+    render json: {"motivational" => motivational, "funny" => funny, "sad" => sad}
   end
 
   private
