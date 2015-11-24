@@ -21,6 +21,8 @@ group :development, :test do
   gem 'guard-jasmine'
   gem 'guard-rspec'
   gem 'jasmine'
+  gem 'launchy'
+  gem 'poltergeist'
   gem 'rspec-rails', '~> 3.0'
 end
 
