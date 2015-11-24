@@ -1,0 +1,29 @@
+(function(){
+
+var app = angular.module('quotes');
+
+app.directive('motivationalQuote', function(){
+  return {
+    templateUrl: '<%= asset_path("motivational-quote.html.erb") %>',
+    controller: 'quotesCtrl',
+    replace: true
+  }
+});
+
+app.directive('funnyQuote', function(){
+  return {
+    templateUrl: '<%= asset_path("funny-quote.html.erb") %>',
+    controller: 'quotesCtrl',
+    replace: true
+  }
+});
+
+app.directive('sadQuote', function(){
+  return {
+    templateUrl: '<%= asset_path("sad-quote.html.erb") %>',
+    controller: 'quotesCtrl',
+    replace: true
+  }
+});
+
+})();

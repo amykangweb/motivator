@@ -17,7 +17,7 @@ app.config(function($routeProvider) {
       controller: 'quotesCtrl'
     })
 
-    .when('/#', {
+    .when('/motivational', {
       templateUrl: 'templates/page-motivational.html.erb',
       controller: 'quotesCtrl'
     })
