@@ -4,15 +4,12 @@ describe('Random Quote', function(){
 
   var ctrl, scope, httpBackend;
   var mockResults =
-      {"motivational":[{"body": "Motivational Quote.", "author": "Jane Doe", "category": "Motivational"},
-                       {"body": "Another Motivational Quote.", "author": "Jane Doe", "category": "Motivational"},
-                       {"body": "Third Motivational Quote.", "author": "Jane Doe", "category": "Motivational"}],
-       "funny":[{"body": "Funny Quote.", "author": "Jane Doe", "category": "Funny"},
-                {"body": "Another Funny Quote.", "author": "Jane Doe", "category": "Funny"},
-                {"body": "Third Funny Quote.", "author": "Jane Doe", "category": "Funny"}],
-       "sad":[{"body": "Sad Quote.", "author": "Jane Doe", "category": "Sad"},
-              {"body": "Another Sad Quote", "author": "Jane Doe", "category": "Sad"},
-              {"body": "Third Sad Quote.", "author": "Jane Doe", "category": "Sad"}]};
+      {"motivational":[{"_id": {"$oid": "1"}, "body": "Motivational Quote.", "author": "Jane Doe", "category": "Motivational"},
+                       {"_id": {"$oid": "2"}, "body": "Another Motivational Quote.", "author": "Jane Doe", "category": "Motivational"}],
+       "funny":[{"_id": {"$oid": "3"}, "body": "Funny Quote.", "author": "Jane Doe", "category": "Funny"},
+                {"_id": {"$oid": "4"}, "body": "Another Funny Quote.", "author": "Jane Doe", "category": "Funny"}],
+       "sad":[{"_id": {"$oid": "5"}, "body": "Sad Quote.", "author": "Jane Doe", "category": "Sad"},
+              {"_id": {"$oid": "6"}, "body": "Another Sad Quote", "author": "Jane Doe", "category": "Sad"}]};
 
   beforeEach(inject(function($controller, $httpBackend){
     scope = {};
@@ -23,26 +20,25 @@ describe('Random Quote', function(){
   it('should return random motivational quote', function(){
     httpBackend.expectGET('api/quotes').respond(mockResults);
     httpBackend.flush();
-    var current = scope.singleM;
-    scope.generateM();
-    expect(current.body).not.toEqual(scope.singleM.body);
+    var current = scope.singleQ;
+    scope.generateQ('motivational');
+    expect(current.body).not.toEqual(scope.singleQ.body);
   });
 
   it('should return random funny quote', function(){
     httpBackend.expectGET('api/quotes').respond(mockResults);
     httpBackend.flush();
-    var current = scope.singleF;
-    scope.generateF();
-    expect(current.body).not.toEqual(scope.singleF.body);
+    var current = scope.singleQ;
+    scope.generateQ('funny');
+    expect(current.body).not.toEqual(scope.singleQ.body);
   });
 
   it('should return random sad quote', function(){
     httpBackend.expectGET('api/quotes').respond(mockResults);
     httpBackend.flush();
-    var current = scope.singleS;
-    scope.generateS();
-    console.log(scope.singleS.body);
-    expect(current.body).not.toEqual(scope.singleS.body);
+    var current = scope.singleQ;
+    scope.generateQ('sad');
+    expect(current.body).not.toEqual(scope.singleQ.body);
   });
 
 });

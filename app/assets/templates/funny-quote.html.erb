@@ -1,6 +1,8 @@
 <section>
   <div>
-    <h2>{{singleF.body}}</h2>
+    <h2>{{singleQ.body}}</h2>
+    <p ng-if="singleQ.votes === undefined">No Votes</p>
+    <p>{{singleQ.votes.length}}</p>
   </div>
-  <a href ng-click="generateF()">Next</a>
+  <a href ng-click="generateQ('funny')">Next</a>
 </section>

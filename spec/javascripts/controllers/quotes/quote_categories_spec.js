@@ -3,7 +3,7 @@ describe('Quote Categories', function(){
   beforeEach(module('quotes'));
 
   var ctrl, scope, httpBackend;
-  var mockResults = {"motivational":[{"body": "Motivational Quote.", "author": "Jane Doe", "category": "Motivational"}],"funny":[{"body": "Funny Quote.", "author": "Jane Doe", "category": "Funny"}],"sad":[{"body": "Sad Quote.", "author": "Jane Doe", "category": "Sad"}]};
+  var mockResults = {"motivational":[{"_id": {"$oid": "1"}, "body": "Motivational Quote.", "author": "Jane Doe", "category": "Motivational"}],"funny":[{"_id": {"$oid": "2"}, "body": "Funny Quote.", "author": "Jane Doe", "category": "Funny"}],"sad":[{"_id": {"$oid": "3"}, "body": "Sad Quote.", "author": "Jane Doe", "category": "Sad"}]};
 
   beforeEach(inject(function($controller, $httpBackend){
     scope = {};
