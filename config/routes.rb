@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :quotes do
-      resources :votes
-    end
+    resources :quotes
+    resources :votes
   end
 
   get '*path', to: 'quotes#index'
