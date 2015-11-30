@@ -6,7 +6,6 @@ app.controller('votesCtrl', function($scope, $http, votesService){
 
   $scope.upVote = function(quote) {
     quote.votes = votesService.upVote(quote);
-    console.log('votesCtrl up vote!');
   };
 
 });
