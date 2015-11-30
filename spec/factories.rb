@@ -1,5 +1,7 @@
 FactoryGirl.define do
+
   factory :motivational, class: Quote do
+    id "1"
     body "Motivational Quote."
     author "Author One"
     category "Motivational"

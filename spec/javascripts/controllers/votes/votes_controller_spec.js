@@ -17,7 +17,7 @@ describe('Votes Controller', function(){
 
   it('should return votes for motivational quote', function(){
     var quote = scope.motivational[0];
-    httpBackend.expectPOST('api/quotes/' + quote._id['$oid'] + '/votes').respond(voteResults);
+    httpBackend.expectPOST('api/votes').respond(voteResults);
     scope.upVote(quote);
     httpBackend.flush();
     expect(quote.votes).toEqual(voteResults);

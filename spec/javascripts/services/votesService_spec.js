@@ -13,7 +13,7 @@ describe('Service: votesService', function(){
 
   it('should create and return votes', function(){
     var quote = mockResults.motivational[0];
-    httpBackend.expectPOST('api/quotes/' + quote._id['$oid'] + '/votes').respond(voteResults);
+    httpBackend.expectPOST('api/votes').respond(voteResults);
     service.upVote(quote);
     httpBackend.flush();
     expect(quote.votes).toEqual(voteResults);
