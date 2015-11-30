@@ -5,7 +5,7 @@ var app = angular.module('quotes');
 app.directive('motivationalQuote', function(){
   return {
     templateUrl: '<%= asset_path("motivational-quote.html.erb") %>',
-    controller: 'quotesCtrl',
+    controller: 'motivationalCtrl',
     replace: true
   }
 });
@@ -13,7 +13,7 @@ app.directive('motivationalQuote', function(){
 app.directive('funnyQuote', function(){
   return {
     templateUrl: '<%= asset_path("funny-quote.html.erb") %>',
-    controller: 'quotesCtrl',
+    controller: 'funnyCtrl',
     replace: true
   }
 });
@@ -21,7 +21,7 @@ app.directive('funnyQuote', function(){
 app.directive('sadQuote', function(){
   return {
     templateUrl: '<%= asset_path("sad-quote.html.erb") %>',
-    controller: 'quotesCtrl',
+    controller: 'sadCtrl',
     replace: true
   }
 });

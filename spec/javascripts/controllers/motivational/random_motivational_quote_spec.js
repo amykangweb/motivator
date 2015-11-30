@@ -1,4 +1,4 @@
-describe('Random Quote', function(){
+describe('Random Motivational Quote', function(){
 
   beforeEach(module('quotes'));
 
@@ -13,7 +13,7 @@ describe('Random Quote', function(){
 
   beforeEach(inject(function($controller, $httpBackend){
     scope = {};
-    ctrl = $controller('quotesCtrl', { $scope: scope });
+    ctrl = $controller('motivationalCtrl', { $scope: scope });
     httpBackend = $httpBackend;
   }));
 
@@ -25,20 +25,5 @@ describe('Random Quote', function(){
     expect(current.body).not.toEqual(scope.singleQ.body);
   });
 
-  it('should return random funny quote', function(){
-    httpBackend.expectGET('api/quotes').respond(mockResults);
-    httpBackend.flush();
-    var current = scope.singleQ;
-    scope.generateQ('funny');
-    expect(current.body).not.toEqual(scope.singleQ.body);
-  });
-
-  it('should return random sad quote', function(){
-    httpBackend.expectGET('api/quotes').respond(mockResults);
-    httpBackend.flush();
-    var current = scope.singleQ;
-    scope.generateQ('sad');
-    expect(current.body).not.toEqual(scope.singleQ.body);
-  });
-
 });
+

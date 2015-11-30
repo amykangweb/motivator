@@ -1,7 +1,13 @@
 <section>
   <div>
-    {{singleQ}}
     <h2>{{singleQ.body}}</h2>
+    <p ng-if="singleQ.votes === undefined">No Votes</p>
+    <p>{{singleQ.votes.length}}</p>
   </div>
-  <a href ng-click="generateQ('funny')">Next</a>
+
+   <div ng-controller="votesCtrl as votes">
+    <p><a href ng-click="upVote(singleQ)">Vote</a></p>
+  </div>
+
+  <a href ng-click="generateQ('sad')">Next</a>
 </section>
