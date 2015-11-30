@@ -12,5 +12,12 @@ describe "Motivational Quotes Page" do
     sleep 2
     expect(page).to have_content(@quote.body)
   end
+
+  it "creates and updates vote", js: true do
+    visit '/motivational'
+    click_link "Vote"
+    sleep 2
+    expect(page).to have_content(1)
+  end
 end
 

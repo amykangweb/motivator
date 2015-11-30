@@ -11,7 +11,6 @@ app.controller('motivationalCtrl', function($scope, $http, quotesService){
   });
 
   $scope.generateQ = function(category){
-    console.log(category);
     var current = $scope.singleQ;
     $scope.singleQ = $scope[category][Math.floor(Math.random() * $scope[category].length)];
     while(current === $scope.singleQ) {
