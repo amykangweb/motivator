@@ -2,8 +2,12 @@
 
 <h2>Information</h2>
 
-By Amy Kang
+<p>By Amy Kang</p>
+
+<strong>** In Development **</strong>
 
 <h2>Description</h2>
 
-Quote generator built with AngularJS, Ruby on Rails, and MongoDB.
+<p>Quote generator built with AngularJS, Ruby on Rails, and MongoDB. Includes AngularJS unit testing with Jasmine, controller and feature tests with Rspec. Tests are run with Guard.</p>
+
+<p>This project is still under development.</p>

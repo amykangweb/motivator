@@ -14,22 +14,22 @@ app.config(function($routeProvider) {
 
     .when('/', {
       templateUrl: 'templates/page-motivational.html.erb',
-      controller: 'quotesCtrl'
+      controller: 'motivationalCtrl'
     })
 
     .when('/motivational', {
       templateUrl: 'templates/page-motivational.html.erb',
-      controller: 'quotesCtrl'
+      controller: 'motivationalCtrl'
     })
 
     .when('/funny', {
       templateUrl: 'templates/page-funny.html.erb',
-      controller: 'quotesCtrl'
+      controller: 'funnyCtrl'
     })
 
     .when('/sad', {
       templateUrl: 'templates/page-sad.html.erb',
-      controller: 'quotesCtrl'
+      controller: 'sadCtrl'
     });
 
 });
